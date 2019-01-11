@@ -32,8 +32,10 @@ public class BoardServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String searchType = request.getParameter("search_type");
+		String searchStr = request.getParameter("search_str");
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-		request.setAttribute("list", bs.selectBoardList());
+		request.setAttribute("list", bs.selectBoardList(searchType, searchStr));
 		rd.forward(request, response);
 	}
 

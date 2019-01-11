@@ -5,5 +5,5 @@ import java.util.Map;
 
 public interface BoardDAO {
 
-	public List<Map<String, String>> selectBoardList();
+	public List<Map<String, String>> selectBoardList(String searchType, String searchStr);
 }
